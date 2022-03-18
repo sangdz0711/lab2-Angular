@@ -1,0 +1,62 @@
+<div class="container">
+    <p>{{productForm.value | json}}</p>
+
+    <p>{{newProduct | json}}</p>
+
+    <div class="row">
+        <div class="col-md-6">
+            <form #productForm="ngForm" class="form" (submit)="onSubmit(productForm.value)">
+                <div class="form-group">
+                    <input name="name" 
+                    type="text" 
+                    class="form-control" 
+                    placeholder="name"
+                    [(ngModel)]="newProduct.name">
+                </div>
+                <div class="form-group">
+                    <input name="price" 
+                    type="number" 
+                    class="form-control" 
+                    placeholder="price"
+                    [(ngModel)]="newProduct.price">
+                </div>
+                <div class="form-group">
+                    <input name="desc" 
+                    type="text" 
+                    class="form-control" 
+                    placeholder="desc"
+                    [(ngModel)]="newProduct.desc"
+                    >
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success" >Submit</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <td>ID</td>
+                        <td>Ten sp</td>
+                        <td>Gia sp</td>
+                        <td>Mo ta sp</td>
+                        <td>Hanh dong</td>
+                    </tr>
+                </thead>
+                <tbody >
+                    <tr *ngFor="let p of ListProduct" >
+                      <td>{{p.id}}</td>
+                      <td>{{p.name}}</td>
+                      <td>{{p.price}}</td>
+                      <td>{{p.desc}}</td>
+                      <td>
+                        <button (click)="remove(p.id)" class="btn btn-danger">Xoa</button>
+                        <button (click)="onEdit(p)" class="btn btn-success">Chinh sua</button>
+                      </td>
+                    </tr>
+                  </tbody>
+            </table>
+        </div>    
+    </div>
+</div>
