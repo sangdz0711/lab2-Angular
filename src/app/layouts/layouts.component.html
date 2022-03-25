@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 style="text-align: center;">Header</h1>
+            <nav class="navbar navbar-expand-lg navbar-info bg-dark" >
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item"><a class="nav-link" routerLink="/products">Product</a></li>
+                  <li class="nav-item"><a class="nav-link" routerLink="/student">Student</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="row">
+            <aside class="col-2">
+                đây là aside
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvyo2dkY1kI5d3vGigkC0h4HrHa1vrPemmHA&usqp=CAU" alt="">
+            </aside>
+            <main class="col-8">
+                <router-outlet></router-outlet>
+            </main>
+        </div>
+        <footer>
+            <h1 style="text-align: center;">NGUYỄN CÔNG SÁNG </h1>
+
+        </footer>
+    </div>
+</body>
+</html>
